@@ -5,12 +5,8 @@ param(
 $currentDir = Get-Location
 Set-Location "c:\Users\User\AppData\Local\Temp\codebase_repo"
 
-# Add the specific file or all changes
-if ($filepath) {
-    git add $filepath
-} else {
-    git add .
-}
+# Always add all changes and new files
+git add .
 
 # Check if there are changes to commit
 $status = git status --porcelain
